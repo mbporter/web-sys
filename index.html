@@ -2,126 +2,207 @@
 <!--Written by McKinnon Porter yayyy-->
 <html>
 <head>
-   <title> Collectors corner</title>
+   <title>Collectors Corner</title>
+   <!-- ✅ Keep only NEW external CSS -->
    <link rel="stylesheet" href="styles.css">
    <script src="script.js"></script>
-</head>
 
+   <!-- ✅ Internal CSS from original -->
+   <style>
+      /* NAVIGATION */
+     
+      /* CONTEXT + TITLE */
+     
+      #title {
+         width: 804px;
+         height: 232px;
+         margin: 40px auto;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 20px;
+      }
+      #title h1 {
+         font-size: 3.5rem;
+         text-align: center;
+         margin: 0;
+      }
+      #Why {
+         max-width: 800px;
+         margin: 40px auto;
+         padding: 30px 20px;
+         text-align: center;
+         border-radius: 15px;
+      }
+      #Why h2 {
+         font-size: 2rem;
+         margin-bottom: 20px;
+      }
+      #Why p {
+         font-size: 1.1rem;
+         line-height: 1.6;
+      }
+
+      /* MAIN SECTION */
+      #main {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 20px;
+         padding: 20px;
+      }
+      #left, #right {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         padding: 20px;
+         border-radius: 10px;
+      }
+
+      /* FEATURED SECTION */
+      #feat {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 20px;
+         padding: 40px 20px;
+         text-align: center;
+      }
+      #feat h2 {
+         grid-column: 1 / -1;
+         margin-bottom: 20px;
+      }
+      #feat > div {
+         padding: 20px;
+         border-radius: 10px;
+      }
+
+      /* Right col wrapper (unused but kept) */
+      #right-col {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+         color: rgb(255, 0, 0);
+      }
+   </style>
+</head>
 
 <body>
 
-<div id="nav">
 
-    <img src="./images/Logo.png" alt="logo" id="logo">
-
-    <div id="nav-links">
-        <h2>Featured Collections:</h2>
-        <a href="Macs-collection/index.html"><h2>Mac's Collection</h2></a>
-        <a href="Calix.html"><h2>Calix's Collection</h2></a>
-        <a href="Form.html" id="contact"><h2>Contact</h2></a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Collectors Corner Logo"></a>
     </div>
+    <nav>
+      <span>Featured Collections:</span>
+      <a href="Mac.html">Mac’s Collection</a>
+      <a href="#">Calix’s Collection</a>
+      <a href="#" class="btn">Contact</a>
+    </nav>
+  </header>
+ 
 
-</div>
+
+
 <div id="context">
-<div id="title">
-    <h1>Where collectors come together.</h1>
+   <div id="title">
+      <h1>Where collectors come together.</h1>
+   </div>
+
+   <div id="Why">
+      <h2>Why Collect?</h2>
+      <h4>Collecting isn’t just about “stuff.” It’s about meaning, memories, and the excitement of finding that next piece. Every collection tells a story—whether it’s about your childhood, your hobbies, or just something you think is cool.</h4>
+   </div>
+
+   <div id="main">
+      <div id="left">
+         <a href="https://depositphotos.com/photo/books-collection-3699706.html">
+            <img src="./images/books.jpg" alt="Books" style="width:624px; height:341px; max-width:600px; border-radius:10px; margin-bottom:15px;">
+         </a>
+         <h4>Fun facts</h4>
+         <ul>
+            <li>People have been collecting since ancient times</li>
+            <li>The world’s largest Pokémon card collection has 70,000+ cards.</li>
+            <li>You can collect almost anything, coins, vinyl, sneakers, postcards, even rubber ducks.</li>
+            <li>Collecting can improve memory, boost creativity, and lower stress.</li>
+            <li>Collectors build communities! Through conventions, online forums, and meetups.</li>
+         </ul>
+      </div>
+
+      <div id="right">
+         <a href="https://www.alamy.com/stock-photo-cd-collection-310398354.html">
+            <img src="./images/cds.jpg" alt="Cds" style="width:624px; height:341px; max-width:600px; border-radius:10px; margin-bottom:15px;">
+         </a>
+         <h4>The Thrill of it</h4>
+         <p>Collecting is part treasure hunt, part personal archive. It’s about discovery, organization, and connecting with others who share your passion. At the end of the day, a collection is more than objects—it’s your story on display.</p>
+      </div>
+   </div>
+
+   <div id="feat">
+      <h2>Featured News</h2>
+      <div id="one">
+         <a href="https://depositphotos.com/photo/books-collection-3699706.html">
+            <img src="./images/ightsab.png" alt="lightsaber" style="width:305px; height:305px; border-radius:10px; margin-bottom:15px;">
+         </a>
+         <h4>“$3.6 million Darth Vader lightsaber breaks Star Wars prop record”</h4>
+         <p>Article by Colin Ricketts</p>
+      </div>
+
+      <div id="two">
+         <a href="https://www.alamy.com/stock-photo-cd-collection-310398354.html">
+            <img src="./images/pokemon.png" alt="Pokémon" style="width:305px; height:305px; border-radius:10px; margin-bottom:15px;">
+         </a>
+         <h4>“BREAKING NEWS: Team Rocket Blasts Back: Ultra Premium Collection Announced!”</h4>
+         <p>Article by TCG Stadium</p>
+      </div>
+
+      <div id="three">
+         <a href="https://www.alamy.com/stock-photo-cd-collection-310398354.html">
+            <img src="./images/mainly.jpg" alt="Man and son" style="width:305px; height:305px; border-radius:10px; margin-bottom:15px;">
+         </a>
+         <h4>“How to Start a Collection & 50+ Manly Collection Ideas”</h4>
+         <p>Article by Jeremy Anderberg</p>
+      </div>
+   </div>
 </div>
-
-<div id="Why">
-    <h2>Why Collect?</h2>
-
-    <h4>Collecting isn’t just about “stuff.” It’s about meaning, memories, and the excitement of finding that next piece. Every collection tells a story—whether it’s about your childhood, your hobbies, or just something you think is cool.</h4>
-
-</div>
-
-<div id="main">
-
-        <div id="left">
-        <a href="https://depositphotos.com/photo/books-collection-3699706.html"><img src="./images/books.jpg" alt="Books" id="mainimg"></a>
-            <h4>Fun facts</h4>
-
-            <lu>
-                <li>People have been collecting since ancient times</li>
-                <li>The world’s largest Pokémon card collection has 70,000+ cards.</li>
-                <li>You can collect almost anything,coins, vinyl, sneakers, postcards, even rubber ducks.</li>
-                <li>Collecting can improve memory, boost creativity, and lower stress.</li>
-                <li>Collectors build communities! Through conventions, online forums, and meetups.</li>
-            </lu>
-
-        </div>
-
-
-        
-        <div id="right">
-        <a href="https://www.alamy.com/stock-photo-cd-collection-310398354.html"><img src="./images/cds.jpg" alt="Cds" id="mainimg"></a>
-            <h4>The Trill of it</h4>
-            <p>Collecting is part treasure hunt, part personal archive. It’s about discovery, organization, and connecting with others who share your passion. At the end of the day, a collection is more than objects—it’s your story on display.</p>
-        </div>
-</div>
-
-<div id="feat">
-    <h2>Featured News</h2>
-
-     <div id="one">
-        <a href="https://depositphotos.com/photo/books-collection-3699706.html"><img src="./images/ightsab.png" alt="lightsaber" id="featimg"></a>
-            <h4>“$3.6 million Darth Vader lightsaber breaks Star Wars prop record”</h4>
-            <p>Article by Colin Ricketts</p>
-
-        </div>
-
-
-        <div id="two">
-        <a href="https://www.alamy.com/stock-photo-cd-collection-310398354.html"><img src="./images/pokemon.png" alt="Pokémon" id="featimg"></a>
-            <h4>“BREAKING NEWS: Team Rocket Blasts Back: Ultra Premium Collection Announced!”</h4>
-            <p>Article by TCG Stadium</p>
-        </div>
-
-        <div id="three">
-        <a href="https://www.alamy.com/stock-photo-cd-collection-310398354.html"><img src="./images/mainly.jpg" alt="Man and son" id="featimg"></a>
-            <h4>“How to Start a Collection & 50+ Manly Collection Ideas”</h4>
-            <!--hello prof if you see this this website is so crazy weird and I do not promote the content that they promote-->
-            <p>Article by Jeremy Anderberg</p>
-        </div>
-
-</div>
-
-
-
-
 
 <footer>
-  <div class="footer-left">
-    <img src="./images/Logo.png" alt="Main Logo" class="footer-logo">
+  <div class="footer-container">
+    <!-- Left: logo + socials -->
+    <div class="footer-left">
+      <img src="images/logo.png" alt="Collectors Corner Logo">
+      <div class="socials">
+        <a href="https://facebook.com" class="icon fb" aria-label="Facebook"></a>
+        <a href="https://linkedin.com" class="icon li" aria-label="LinkedIn"></a>
+        <a href="https://youtube.com" class="icon yt" aria-label="YouTube"></a>
+        <a href="https://instagram.com" class="icon ig" aria-label="Instagram"></a>
+      </div>
+    </div>
+
+    <!-- Right: footer links -->
+    <div class="footer-right">
+      <div>
+        <h4>Partners</h4>
+        <p>Mac</p>
+        <p>Ty</p>
+        <p>Calix</p>
+      </div>
+      <div>
+        <h4>About</h4>
+        <p>Projects</p>
+        <p>Jobs</p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p>Contact</p>
+        <p>Page</p>
+      </div>
+    </div>
   </div>
 
-  <div class="footer-right">
-    <div class="footer-column">
-      <h4>Partners</h4>
-      <p>Mac</p>
-      <p>Ty</p>
-      <p>Calix</p>
-    </div>
-
-    <div class="footer-column">
-      <h4>About</h4>
-      <p>Projects</p>
-      <p>Jobs</p>
-    </div>
-
-    <div class="footer-column">
-      <h4>Support</h4>
-      <p>Contact</p>
-      <p>Page</p>
-      <p>© Collectors Corner</p>
-    </div>
-  </div>
-  
-    </div>
-
+  <p class="copyright">© Collectors corner</p>
 </footer>
 
 </body>
-
-
-
 </html>

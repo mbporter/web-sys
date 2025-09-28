@@ -1,204 +1,110 @@
-
-#nav{
-    display: grid;
-    grid-template-columns: auto 1fr auto; 
-    align-items: center;
-    padding: 10px 30px;
-    gap: 100px;
-    position: sticky; 
-    top: 0;
-    background: white; 
-    z-index: 1000;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-}
-#nav-links{
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    gap: 100px;
-    padding: 0; 
-    grid-column: 2; 
-}
-#logo{
-    height: 80px;
-    width: 80px;
-    margin: 0;
-}
-#nav-links a{
-    text-decoration: none;
-    color: #111;
-    font-weight: 600;
-}
-#nav-links a h2{
-    margin: 0; 
-    font-size: 1.05rem;
-    text-decoration: underline;
-}
-#nav-links a#contact {
-    display: inline-block;
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-}
-#nav-links a#contact:hover {
-    background-color: #333;
+/* GENERAL */
+body {
+  background: #f8f8d8;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: #111;
+  line-height: 1.6;
 }
 
-#context{
-    background-color: #F2F3AE;
+/* HEADER */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
 }
-#title {
-    width: 804px;
-    height: 232px;
-    margin: 40px auto; /* centers block horizontally with spacing */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: #F2F3AE;
-    border-radius: 20px;
+.site-header .logo img {
+  height: 65px;
+  width: auto;
 }
-
-#title h1 {
-    font-size: 3.5rem; /* adjust text size */
-    text-align: center;
-    margin: 0;
+.site-header nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
 }
-
-#Why {
-    max-width: 800px;           /* keeps it from stretching too wide */
-    margin: 40px auto;           /* centers it horizontally with spacing */
-    padding: 30px 20px;          /* internal spacing */
-    text-align: center;          /* centers text */
-    background: #F2F3AE; /* subtle background */
-    border-radius: 15px;
+.site-header nav span {
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
 }
-
-#Why h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+.site-header nav a {
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: underline;
 }
-
-#Why p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-
-/* Main section: two columns side by side */
-#main {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* two equal columns */
-    gap: 20px;
-    padding: 20px;
+.site-header .btn {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
 }
 
-/* Left + Right cards */
-#left, #right {
-    display: flex;
-    flex-direction: column; /* stack image on top, text below */
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    background: #fff;
-}
-
-/* Images inside left/right */
-#left img, #right img {
-    width: 624px;
-    height: 341px;
-    max-width: 600px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-/* Featured section: three columns */
-#feat {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 40px 20px;
-    background-color: #F2F3AE;
-    text-align: center;
-}
-
-#feat h2 {
-    grid-column: 1 / -1;   /* stretch across all columns */
-    margin-bottom: 20px;   /* spacing between heading and cards */
-}
-
-/* Each featured item */
-#feat > div {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Featured images */
-#feat img {
-    width: 305px;
-    height: 305px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-/* Right column wrapper */
-#right-col {
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* space between #two and #three */
-}
-
-
-
+/* FOOTER */
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    background: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 40px 60px;
-    flex-wrap: wrap; /* responsive */
+  background: #fff;
+  padding: 2rem 3rem;
+  border-top: 1px solid #ddd;
 }
-
-/* Left side */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 6rem;
+}
 .footer-left {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
-
-.footer-logo {
-    width: 100px;
-    height: auto;
+.footer-left img {
+  height: 110px;
+  width: auto;
 }
-
-/* Right side */
+.socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.socials .icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url("images/socials.png") no-repeat;
+  background-size: 160px 40px;
+}
+.socials .fb { background-position: 0 0; }
+.socials .li { background-position: -40px 0; }
+.socials .yt { background-position: -80px 0; }
+.socials .ig { background-position: -120px 0; }
 .footer-right {
-    display: flex;
-    gap: 60px;
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 6rem;
 }
-
-.footer-column h4 {
-    margin-bottom: 12px;
-    font-size: 1.2rem;
-    color: #000000;
+.footer-right h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
-
-.footer-column p {
-    margin: 6px 0;
-    font-size: 0.95rem;
-    cursor: pointer;
+.footer-right p {
+  margin: 0.25rem 0;
 }
-
-.footer-column p:hover {
-    text-decoration: underline;
+.copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 1.5rem;
 }
-
-

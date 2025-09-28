@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--Written by McKinnon Porter yayyy-->
+<html>
+<head>
+   <title>Collectors Corner</title>
+   <link rel="stylesheet" href="styles.css">
+   <style>
+      /* Your provided CSS block */
+
+      
+
+      #Why {
+          max-width: 800px;           
+          margin: 40px auto;           
+          padding: 30px 20px;          
+          text-align: center;          
+          border-radius: 15px;
+      }
+
+      #Why h2 {
+          font-size: 2rem;
+          margin-bottom: 20px;
+      }
+
+      #Why p {
+          font-size: 1.1rem;
+          line-height: 1.6;
+      }
+
+      #main {
+          display: grid;
+          grid-template-columns: 1fr 1fr; 
+          gap: 20px;
+          padding: 20px;
+      }
+
+      #left, #right {
+          display: flex;
+          flex-direction: column; 
+          align-items: center;
+          text-align: center;
+          padding: 20px;
+          border-radius: 10px;
+      }
+
+      #left img, #right img {
+          width: 313px;
+          height: 200px;
+          max-width: 600px;
+          border-radius: 10px;
+          margin-bottom: 15px;
+      }
+
+      #feat {
+          display: grid;
+          grid-template-columns: 1fr 2fr; 
+          gap: 20px;
+          padding: 40px 20px;
+      }
+
+      #feat h2 {
+          grid-column: 1 / -1;
+          margin-bottom: 20px;
+          text-align: center;
+      }
+
+      #one {
+          padding: 20px;
+          border-radius: 10px;
+          background-color: rgba(0, 0, 0, 0.18);
+      }
+
+      #two, #three {
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+      }
+
+      #two a :hover{
+          color: darkolivegreen;
+      }
+      #two a{
+          color: black;
+      }
+
+      #feat > div {
+          padding: 20px;
+          border-radius: 10px;
+      }
+
+      #feat img {
+          width: 305px;
+          height: 305px;
+          border-radius: 10px;
+          margin-bottom: 15px;
+      }
+
+      .now-playing-container {
+          display: flex;
+          gap: 60px; 
+          align-items: flex-start; 
+          padding: 20px;
+      }
+
+      .cd-cover img {
+          width: 400px;
+          height: 400px;
+          object-fit: cover;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      }
+      .cd-cover {
+          margin-right: 20px; 
+          padding: 20px;
+      }
+
+      .track-info-box {
+          display: flex;
+          justify-content: center;  
+          align-items: center;      
+          padding: 60px;
+          width: 300px;             
+          height: 400px;            
+          background-color: rgba(0,0,0,0.1); 
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+
+      .track-info {
+          text-align: center;
+      }
+
+      .track-info h2 {
+          margin-bottom: 15px;
+      }
+
+      
+   </style>
+</head>
+
+<body>
+
+ <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Collectors Corner Logo"></a>
+    </div>
+    <nav>
+      <span>Featured Collections:</span>
+      <a href="#">Mac’s Collection</a>
+      <a href="#">Calix’s Collection</a>
+      <a href="#" class="btn">Contact</a>
+    </nav>
+  </header>
+
+<div id="context">
+
+<div id="Why">
+    <h2>Mac’s Passion for Collecting</h2>
+
+    <h4>When I was a kid, I was obsessed with Pokémon cards and that was the first thing I started collecting! It was starting to get popular and me and my friends started trading at recess in elementary school! Sadly, the school decided to ban the cards shortly after we started. Also, one of my friends decided to steal my best cards but that didn't stop my passion for collecting! Now more recently, I collect Stickers, CD’s and other physical media such as DVD’s and Video games.</h4>
+
+</div>
+
+<div id="main">
+
+        <div id="left">
+            <h2>Why I collect:</h2>
+            <p> Personally, I get a lot of the things I collect in thrift stores and local stores for my physical media. Some other things I collect that are fan made or merch from shows I buy second hand from either Mercari, Etsy or artists personal websites! </p>
+        <a href="https://depositphotos.com/photo/books-collection-3699706.html"><img src="./images/bag.jpg" alt="Books" id="mainimg"></a>
+        
+        </div>
+
+
+        
+        <div id="right">
+        <a href="https://www.alamy.com/stock-photo-cd-collection-310398354.html"><img src="./images/cds2.jpg" alt="Cds" id="mainimg"></a>
+            <h2>Reasons:</h2>
+            <p>The reasons I collect really depend on the items. I collect my physical media due to streaming services and media not being available any other way. My fan merch I like to collect to support artists and being able to have merch of shows that don't have official merchandise. </p>
+        </div>
+</div>
+<div id="feat">
+    <h2>Collected Items</h2>
+
+    <div id="one">
+        <h2>In my collection I have </h2>
+        <ul>
+            <li>30 Dvds</li>
+            <li>13 box sets</li>
+            <li>37 Physical games</li>
+            <li>34 Manga</li>
+            <li>15 artists prints</li>
+            <li>140+ Stickers</li>
+            <li>50+ keychains and pins</li>
+            <li>10+ figures</li>
+            <li>68 Cds</li>
+        </ul>
+    </div>
+
+    <div id="right-col"> 
+        <div id="two">
+            <h3>I don't ever really have a way to show off my collections so making a website for them is the next best thing! I'm also making another website specifically for my sticker collection! <a href="https://mbporter.github.io/Stickers/" target="_blank">(https://mbporter.github.io/Stickers/)</a></h3>
+        </div>
+
+        <div id="three">
+            <h3>Here are some of my favorite CD’s that are in my collection, I personally dont collect things because they are rare mainly for the music so I cannot comment on the rarity of these. But I have collected them all in person, which is cool to me!</h3>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="now-playing-container">
+  <div class="cd-cover">
+    <img src="./images/slowdive.jpg" alt="CD Cover">
+  </div>
+
+  <div class="track-info-box">
+  <div class="track-info">
+    <h2>Now Playing</h2>
+    <p>When the Sun Hits</p>
+    <p>SlowDive</p>
+  </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-container">
+    <!-- Left: logo + socials -->
+    <div class="footer-left">
+      <img src="images/logo.png" alt="Collectors Corner Logo">
+      <div class="socials">
+        <a href="https://facebook.com" class="icon fb" aria-label="Facebook"></a>
+        <a href="https://linkedin.com" class="icon li" aria-label="LinkedIn"></a>
+        <a href="https://youtube.com" class="icon yt" aria-label="YouTube"></a>
+        <a href="https://instagram.com" class="icon ig" aria-label="Instagram"></a>
+      </div>
+    </div>
+
+    <!-- Right: footer links -->
+    <div class="footer-right">
+      <div>
+        <h4>Partners</h4>
+        <p>Mac</p>
+        <p>Ty</p>
+        <p>Calix</p>
+      </div>
+      <div>
+        <h4>About</h4>
+        <p>Projects</p>
+        <p>Jobs</p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p>Contact</p>
+        <p>Page</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="copyright">© Collectors corner</p>
+</footer>
+
+</body>
+</html>
+

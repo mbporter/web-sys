@@ -1,0 +1,110 @@
+/* GENERAL */
+body {
+  background: #f8f8d8;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* HEADER */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.site-header .logo img {
+  height: 65px;
+  width: auto;
+}
+.site-header nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.site-header nav span {
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.site-header nav a {
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+.site-header .btn {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-top: 1px solid #ddd;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 6rem;
+}
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-left img {
+  height: 110px;
+  width: auto;
+}
+.socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.socials .icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url("images/socials.png") no-repeat;
+  background-size: 160px 40px;
+}
+.socials .fb { background-position: 0 0; }
+.socials .li { background-position: -40px 0; }
+.socials .yt { background-position: -80px 0; }
+.socials .ig { background-position: -120px 0; }
+.footer-right {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 6rem;
+}
+.footer-right h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.footer-right p {
+  margin: 0.25rem 0;
+}
+.copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 1.5rem;
+}
