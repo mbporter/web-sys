@@ -1,0 +1,110 @@
+/* GENERAL */
+body {
+  background: #f8f8d8; /* Light yellowish background color */
+  font-family: 'Inter', sans-serif; /* Sets font to Inter (fallback sans-serif) */
+  margin: 0; /* Removes default body margin */
+  color: #111; /* Dark gray text color */
+  line-height: 1.6; /* Increases line spacing for readability */
+}
+
+/* HEADER */
+.site-header {
+  display: flex; /* Uses flexbox layout */
+  justify-content: space-between; /* Spaces items left and right */
+  align-items: center; /* Vertically centers items */
+  padding: 1rem 3rem; /* Spacing inside header (top/bottom 1rem, sides 3rem) */
+  background: #fff; /* White background */
+  border-bottom: 1px solid #ddd; /* Light gray bottom border */
+}
+.site-header .logo img {
+  height: 65px; /* Fixed logo height */
+  width: auto; /* Keeps logo aspect ratio */
+}
+.site-header nav {
+  flex: 1; /* Takes available space */
+  display: flex; /* Flexbox for nav items */
+  justify-content: center; /* Centers nav items horizontally */
+  align-items: center; /* Vertically centers nav items */
+  gap: 4rem; /* Spaces items 4rem apart */
+}
+.site-header nav span {
+  color: #000; /* Black text color */
+  font-weight: 500; /* Medium bold text */
+  font-size: 1rem; /* Normal size text */
+  text-decoration: none; /* Removes underline */
+}
+.site-header nav a {
+  color: #000; /* Black text color */
+  font-weight: 500; /* Medium bold text */
+  font-size: 1rem; /* Normal size text */
+  text-decoration: underline; /* Adds underline to links */
+}
+.site-header .btn {
+  background: #000; /* Black button background */
+  color: #fff; /* White text */
+  padding: 0.5rem 1.25rem; /* Inner spacing (top/bottom 0.5rem, sides 1.25rem) */
+  border-radius: 6px; /* Slightly rounded corners */
+  font-weight: 600; /* Bold text */
+  white-space: nowrap; /* Prevents text from wrapping */
+  text-decoration: none; /* Removes underline */
+}
+
+/* FOOTER */
+footer {
+  background: #fff; /* White background */
+  padding: 2rem 3rem; /* Inner spacing (top/bottom 2rem, sides 3rem) */
+  border-top: 1px solid #ddd; /* Light gray top border */
+}
+.footer-container {
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Spreads items apart */
+  align-items: flex-start; /* Aligns items to the top */
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  gap: 6rem; /* Large spacing between groups */
+}
+.footer-left {
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Stacks items vertically */
+  align-items: center; /* Centers items horizontally */
+  gap: 1rem; /* Spaces items 1rem apart */
+}
+.footer-left img {
+  height: 110px; /* Larger footer logo */
+  width: auto; /* Keeps aspect ratio */
+}
+.socials {
+  display: flex; /* Flexbox layout for social icons */
+  gap: 1rem; /* Spaces icons apart */
+  justify-content: center; /* Centers icons */
+}
+.socials .icon {
+  display: inline-block; /* Inline but block-like for sizing */
+  width: 40px; /* Icon width */
+  height: 40px; /* Icon height */
+  background: url("images/socials.png") no-repeat; /* Uses sprite image */
+  background-size: 160px 40px; /* Scales sprite sheet */
+}
+.socials .fb { background-position: 0 0; } /* Shows Facebook icon */
+.socials .li { background-position: -40px 0; } /* Shows LinkedIn icon */
+.socials .yt { background-position: -80px 0; } /* Shows YouTube icon */
+.socials .ig { background-position: -120px 0; } /* Shows Instagram icon */
+.footer-right {
+  flex: 1; /* Expands to available width */
+  display: flex; /* Flexbox layout */
+  justify-content: space-evenly; /* Even spacing between columns */
+  gap: 6rem; /* Wide spacing between sections */
+}
+.footer-right h4 {
+  margin-bottom: 0.5rem; /* Space below heading */
+  font-size: 1rem; /* Medium text */
+  font-weight: 600; /* Bold text */
+}
+.footer-right p {
+  margin: 0.25rem 0; /* Small vertical spacing between lines */
+}
+.copyright {
+  text-align: center; /* Centers text */
+  font-size: 0.85rem; /* Smaller font size */
+  color: #555; /* Medium gray color */
+  margin-top: 1.5rem; /* Space above copyright */
+}

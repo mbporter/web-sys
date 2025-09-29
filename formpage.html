@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collectors Corner - Join Our Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+/* HERO (Form Page) */
+.join-hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem;
+}
+.hero-text {
+  flex: 1;
+}
+.hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero-text .sub {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.hero-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  flex: 1;
+}
+.hero-images img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* FORM */
+.join-form {
+  padding: 2rem 3rem;
+}
+.join-form h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
+}
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+.form-grid input {
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+}
+.submit-btn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background: #333;
+}
+</style>
+
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">
+      <img src="images/logo.png" alt="Collectors Corner Logo">
+    </div>
+    <nav>
+      <span>Featured Collections:</span>
+      <a href="#">Mac’s Collection</a>
+      <a href="#">Calix’s Collection</a>
+      <a href="#" class="btn">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero / Intro -->
+  <section class="join-hero">
+    <div class="hero-text">
+      <h1>Become part of <em>our</em> Collection.</h1>
+      <p class="sub">Join a growing group of collectors on our website.</p>
+      <p>Do you have a collection you’re passionate about?</p>
+      <p>Why not show the world? Whether you’re into vintage coins, delicate teacups, funky gadgets, or quirky keepsakes, every collection says something unique about you. Share your passion, connect with fellow collectors, and let your treasures shine in our growing community!</p>
+    </div>
+    <div class="hero-images">
+      <img src="images/GettyImages-1360671016-9778338fe2ea4066b330935ba0939c59.webp" alt="collection image 1">
+      <img src="images/entire-history-of-germany-told-thru-the-5-pfennig-coinage-v0-y7w4nvfa82pf1.webp" alt="collection image 2">
+      <img src="images/my-mini-baseball-bat-collection-from-most-mlb-stadiums-v0-rw9juxf6deof1.webp" alt="collection image 3">
+      <img src="images/only-recently-i-started-collecting-view-master-reels-v0-hit4w2xfpykf1.webp" alt="collection image 4">
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="join-form">
+    <h2>Enter your details below:</h2>
+    <form>
+      <div class="form-grid">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Jane">
+        </label>
+        <label>
+          Collection Topic
+          <input type="text" name="topic" placeholder="Baseballs">
+        </label>
+        <label>
+          Email address
+          <input type="email" name="email" placeholder="email@janesfakedomain.net">
+        </label>
+        <label>
+          Description of Collection
+          <input type="text" name="description" placeholder="Enter here">
+        </label>
+        <label>
+          Featured Item
+          <input type="text" name="featured-item" placeholder="Enter here">
+        </label>
+        <label>
+          Image of Featured Item
+          <input type="text" name="featured-image" placeholder="Enter here">
+        </label>
+        <label>
+          Description of Featured Item
+          <input type="text" name="featured-description" placeholder="Enter here">
+        </label>
+        <label>
+          Other Collection images
+          <input type="text" name="other-images" placeholder="Enter here">
+        </label>
+        <label>
+          Other Collection fun facts
+          <input type="text" name="fun-facts" placeholder="Enter here">
+        </label>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+  <div class="footer-container">
+    <!-- Left: logo + socials -->
+    <div class="footer-left">
+      <img src="images/logo.png" alt="Collectors Corner Logo">
+      <div class="socials">
+        <a href="https://facebook.com" class="icon fb" aria-label="Facebook"></a>
+        <a href="https://linkedin.com" class="icon li" aria-label="LinkedIn"></a>
+        <a href="https://youtube.com" class="icon yt" aria-label="YouTube"></a>
+        <a href="https://instagram.com" class="icon ig" aria-label="Instagram"></a>
+      </div>
+    </div>
+
+    <!-- Right: footer links -->
+    <div class="footer-right">
+      <div>
+        <h4>Partners</h4>
+        <p>Mac</p>
+        <p>Ty</p>
+        <p>Calix</p>
+      </div>
+      <div>
+        <h4>About</h4>
+        <p>Projects</p>
+        <p>Jobs</p>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <p>Contact</p>
+        <p>Page</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="copyright">© Collectors corner</p>
+</footer>
+</body>
+</html>
+
+<!-- TODO: MAKE SURE TO USE 3 DIFFERENT TYPES OF CSS FOR FINAL VERSION -->
