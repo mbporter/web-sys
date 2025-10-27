@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Collectors Corner - Join Our Collection</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 
   <style>
 /* HERO (Form Page) */
@@ -86,12 +86,12 @@
   <!-- Header -->
   <header class="site-header">
     <div class="logo">
-      <img src="images/Logo.png" alt="Collectors Corner Logo">
+      <img src="images/logo.png" alt="Collectors Corner Logo">
     </div>
     <nav>
       <span>Featured Collections:</span>
-      <a href="Mac.html">Mac’s Collection</a>
-      <a href="Calixpage.html">Calix’s Collection</a>
+      <a href="#">Mac’s Collection</a>
+      <a href="#">Calix’s Collection</a>
       <a href="#" class="btn">Contact</a>
     </nav>
   </header>
@@ -162,7 +162,7 @@
   <div class="footer-container">
     <!-- Left: logo + socials -->
     <div class="footer-left">
-      <a href="index.html"><img src="images/Logo.png" alt="Collectors Corner Logo"></a>
+      <img src="images/logo.png" alt="Collectors Corner Logo">
       <div class="socials">
         <a href="https://facebook.com" class="icon fb" aria-label="Facebook"></a>
         <a href="https://linkedin.com" class="icon li" aria-label="LinkedIn"></a>
@@ -194,8 +194,111 @@
 
   <p class="copyright">© Collectors corner</p>
 </footer>
+<script>
+(function () {
+  const form = document.querySelector('form');
+  if (!form) return;
+
+  const byName = (n) => form.querySelector(`[name="${n}"]`);
+  const fields = {
+    name: byName('name'),
+    topic: byName('topic'),
+    email: byName('email'),
+    description: byName('description'),
+    featuredItem: byName('featured-item'),
+    featuredImage: byName('featured-image'),
+    featuredDescription: byName('featured-description'),
+    otherImages: byName('other-images'),
+    funFacts: byName('fun-facts')
+  };
+
+  const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  const isValidURL = (v) => {
+    try {
+      const u = new URL(v);
+      return u.protocol === 'http:' || u.protocol === 'https:';
+    } catch (e) {
+      return false;
+    }
+  };
+
+  const setErr = (el, msg) => el && el.setCustomValidity(msg || '');
+
+  function getValidationMessage(name) {
+    const el = fields[name];
+    const val = (el.value || '').trim();
+
+    switch (name) {
+      case 'name':
+        if (!val) return 'Name is required.';
+        if (val.length < 2) return 'Name must be at least 2 characters.';
+        return '';
+      case 'topic':
+        if (!val) return 'Collection topic is required.';
+        return '';
+      case 'email':
+        if (!val) return 'Email is required.';
+        if (!isValidEmail(val)) return 'Please enter a valid email address.';
+        return '';
+      case 'description':
+        if (!val) return 'Description is required.';
+        if (val.length < 10) return 'Description should be at least 10 characters.';
+        return '';
+      case 'featuredItem':
+        if (!val) return 'Featured item is required.';
+        return '';
+      case 'featuredImage':
+        if (!val) return '';
+        if (!isValidURL(val)) return 'Please enter a valid image URL (http or https).';
+        return '';
+      case 'otherImages':
+        if (!val) return '';
+        const parts = val.split(',').map(s => s.trim()).filter(Boolean);
+        for (let p of parts) if (!isValidURL(p)) return 'One or more image URLs are invalid.';
+        return '';
+      case 'funFacts':
+        if (val.length > 300) return 'Fun facts must be 300 characters or fewer.';
+        return '';
+      default:
+        return '';
+    }
+  }
+
+  Object.keys(fields).forEach((name) => {
+    const el = fields[name];
+    el.addEventListener('input', () => setErr(el, getValidationMessage(name)));
+    el.addEventListener('blur', () => {
+      const msg = getValidationMessage(name);
+      setErr(el, msg);
+      if (msg) el.reportValidity();
+    });
+  });
+
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+
+    let firstInvalid = null;
+    Object.keys(fields).forEach((name) => {
+      const el = fields[name];
+      const msg = getValidationMessage(name);
+      setErr(el, msg);
+      if (msg && !firstInvalid) firstInvalid = el;
+    });
+
+    if (firstInvalid) {
+      firstInvalid.reportValidity();
+      return;
+    }
+
+    // ✅ All validation passed — show success popup
+    alert("Form Successfully Submitted!");
+
+    // Optionally reset the form after success:
+    form.reset();
+  });
+})();
+</script>
 </body>
 </html>
-
 
 <!-- TODO: MAKE SURE TO USE 3 DIFFERENT TYPES OF CSS FOR FINAL VERSION -->
