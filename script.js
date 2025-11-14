@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Metadata for each image (title + description). Keep order in sync with `images` array.
     // Add YouTube video IDs for favorite tracks
     const metadata = [
-        { title: 'Slowdive - Souvlaki', desc: "I love Slowdive and was very happy to find this CD in person! My favorite track from this album is 'When the Sun Hits.' Give it a listen.", youtube: 'tjdo8_FMZCI&list=RDtjdo8_FMZCI', start: 0 },
+        { title: 'Slowdive - Souvlaki', desc: "I love Slowdive and was very happy to find this CD in person! My favorite track from this album is 'When the Sun Hits.' Give it a listen.", youtube: 'dQw4w9WgXcQ', start: 1 },
         { title: 'Orbiting Human Circus - Quartet Plus Two', desc: 'The Orbiting Human Circus along with The Music Tapes are certainly a unique sound and I love them for it! This was a great find in person after I tried to order it online. My favorite track is "Let’s Face the Music!" If you want to listen to something probably out of your comfort zone, they are for you!', youtube: 'dQw4w9WgXcQ', start: 1 },
         { title: 'Elliott Smith - Kill Rock Stars (or Self-Titled)', desc: 'Elliott Smith has always been a long-time favorite. Though this isn’t his most popular album, it is a must-listen. Not a single skip in this album. My favorite track is "Clementine."', youtube: 'QJzj3pG6b7A', start: 45 },
         { title: 'Elliott Smith - Either/Or', desc: 'Undeniably Elliott Smith’s most popular album and for good reason. If you have heard one of his songs, it’s most likely from this album. My favorite track has to be "Speed Trials," but it’s almost impossible for me to choose a favorite.', youtube: 'w6iU2bT1lJQ', start: 90 },
