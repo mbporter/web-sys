@@ -4,6 +4,7 @@
 <head>
    <title>Collectors Corner</title>
    <link rel="stylesheet" href="styles.css">
+   <script src="script.js"></script>
    <style>
       /* Your provided CSS block */
 
@@ -134,7 +135,52 @@
           margin-bottom: 15px;
       }
 
-      
+      .infinite-scroll-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+    margin: 20px 0;
+}
+
+.scroll-content {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.scroll-items {
+    display: flex;
+    animation: scroll 60s linear infinite;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.scroll-items img {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.scroll-items img:hover {
+    transform: scale(1.05);
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Pause animation on hover */
+.infinite-scroll-container:hover .scroll-items {
+    animation-play-state: paused;
+}
+
+
    </style>
 </head>
 
@@ -208,8 +254,6 @@
     </div>
 </div>
 
-
-
 <div class="now-playing-container">
   <div class="cd-cover">
     <img src="images/slowdive.jpg" alt="CD Cover">
@@ -224,7 +268,25 @@
   </div>
 </div>
 
-
+<div class="infinite-scroll-container">
+    <div class="scroll-content">
+        <div class="scroll-items">
+            <img src="images/cd/1.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/2.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/3.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/4.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/5.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/6.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/7.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/8.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/9.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/10.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/11.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/132.PNG" height="200" alt="Merch Item"/>
+            <img src="images/cd/Capture.PNG" height="200" alt="Merch Item"/>
+        </div>
+    </div>
+</div>
 <footer>
   <div class="footer-container">
     <!-- Left: logo + socials -->
