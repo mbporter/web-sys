@@ -318,7 +318,145 @@
           transform: scale(1.12) translateY(-10px);
           box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
       }
+      
+#flipbook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(52,152,219,0.15);
+    width: 340px;
+    margin: 40px auto;
+}
 
+/* Flipbook layout: image + info panel */
+.flipbook-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 920px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+#flipbook-info {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+    max-width: 520px;
+    color: #2c3e50;
+}
+
+#flipbook-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+}
+
+#flipbook-info p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+#flipbook img {
+    width: 280px;
+    height: 400px;
+    margin: 0;
+    display: block;
+    border-radius: 8px;
+    border: 2px solid #e74c3c;
+    background: #fffbe6;
+}
+
+/* Make the inner area a centered container and position nav buttons absolutely */
+.flipbook-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* establishes containing block for absolute buttons */
+}
+
+/* Side navigation buttons */
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #3498db;
+    color: #3498db;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+#prev { left: -22px; }
+#next { right: -22px; }
+
+#prev:hover, #next:hover { color: #e74c3c; border-color: #e74c3c; }
+
+
+.flipbook-img {
+    width: 120px;
+    height: 160px;
+    margin: 0 4px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 8px;
+    border: 2px solid #f1c40f;
+    background: #fffbe6;
+    transition: transform 0.6s cubic-bezier(.68,-0.55,.27,1.55), opacity 0.6s;
+    opacity: 1;
+}
+
+.flipbook-img.flip-out {
+    transform: translateX(-100px) scale(0.95) rotateY(-30deg);
+    opacity: 0;
+}
+
+.flipbook-img.flip-in {
+    transform: translateX(100px) scale(0.95) rotateY(30deg);
+    opacity: 0;
+}
+
+#flipbook-pages {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin: 8px 0 0 0;
+    width: 100%;
+}
+    
+
+.page-btn {
+    padding: 1px 5px;
+    border: 1px solid #3498db;
+    background: #fff;
+    color: #3498db;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    min-width: 18px;
+    min-height: 18px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.page-btn.active,
+.page-btn:hover {
+    background: #3498db;
+    color: #fff;
+}
       @keyframes scroll {
           0% {
               transform: translateX(0);
@@ -433,6 +571,25 @@
             <h3>Here are some of my favorite CD’s that are in my collection, I personally dont collect things because they are rare mainly for the music so I cannot comment on the rarity of these. But I have collected them all in person, which is cool to me!</h3>
         </div>
     </div>
+</div>
+
+<div class="main-content">
+    <div class="flipbook-row">
+        <div id="flipbook">
+            <div class="flipbook-inner">
+                <button id="prev">⟨</button>
+                <a href="#"><img id="page-img-left" class="flipbook-img" src="images/cd/1.PNG" alt="House from House MD"></a>
+                <button id="next">⟩</button>
+            </div>
+        </div>
+
+        <div id="flipbook-info" aria-live="polite">
+            <h3 id="flipbook-title">SlowDive — When the Sun Hits</h3>
+            <p id="flipbook-desc">A favorite track currently playing, part of Mac's CD collection. Click next/prev or use the page buttons below to see more items and descriptions.</p>
+        </div>
+    </div>
+
+    <div id="flipbook-pages"></div>
 </div>
 
 <div class="now-playing-container">
