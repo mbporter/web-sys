@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const width = window.innerWidth;
         const baseSpeed = 45; // Base animation duration in seconds
         const speedFactor = Math.max(0.5, Math.min(1.5, width / 1000));
-        scrollContent.style.animationDuration = ${baseSpeed * speedFactor}s;
+        scrollContent.style.animationDuration = `${baseSpeed * speedFactor}s`;
     }
 
     // Update speed on resize
