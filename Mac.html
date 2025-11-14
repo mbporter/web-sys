@@ -363,14 +363,18 @@
     line-height: 1.6;
 }
 
-#flipbook img {
-    width: 280px;
-    height: 400px;
-    margin: 0;
+/* Make flipbook images square and prevent stretching */
+#flipbook img,
+.flipbook-img {
+    width: 320px;
+    max-width: 100%;
+    aspect-ratio: 1 / 1; /* ensures square */
+    height: auto; /* let aspect-ratio control height */
     display: block;
     border-radius: 8px;
     border: 2px solid #e74c3c;
     background: #fffbe6;
+    object-fit: cover; /* crop rather than stretch */
 }
 
 /* Make the inner area a centered container and position nav buttons absolutely */
@@ -379,6 +383,7 @@
     align-items: center;
     justify-content: center;
     position: relative; /* establishes containing block for absolute buttons */
+    padding: 0 36px; /* reserve space so side buttons don't visually overlap the image */
 }
 
 /* Side navigation buttons */
@@ -494,6 +499,9 @@
               height: 280px;
           }
 
+          /* make flipbook image smaller on small screens */
+          #flipbook img, .flipbook-img { width: 220px; aspect-ratio: 1 / 1; }
+
           #Why h2 {
               font-size: 1.8rem;
           }
@@ -584,27 +592,18 @@
         </div>
 
         <div id="flipbook-info" aria-live="polite">
-            <h3 id="flipbook-title">SlowDive — When the Sun Hits</h3>
-            <p id="flipbook-desc">A favorite track currently playing, part of Mac's CD collection. Click next/prev or use the page buttons below to see more items and descriptions.</p>
+            <h3 id="flipbook-title">SlowDive — souvlaki</h3>
+            <p id="flipbook-desc">I love slowdive and was very happy to find this CD in person! My favorite track from this album is "When the sun hits"! Give it a listen.</p>
+            <div id="flipbook-song">
+                <iframe id="flipbook-yt" width="320" height="180" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
     <div id="flipbook-pages"></div>
 </div>
 
-<div class="now-playing-container">
-  <div class="cd-cover">
-    <img src="images/slowdive.jpg" alt="CD Cover">
-  </div>
 
-  <div class="track-info-box">
-  <div class="track-info">
-    <h2>Now Playing</h2>
-    <p>When the Sun Hits</p>
-    <p>SlowDive</p>
-  </div>
-  </div>
-</div>
 
 <div class="infinite-scroll-container">
     <div class="scroll-content">
