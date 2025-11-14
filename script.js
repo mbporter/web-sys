@@ -95,9 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update YouTube player
             const ytFrame = document.getElementById('flipbook-yt');
             if (ytFrame && meta.youtube) {
-                // Use YouTube embed with autoplay and start time
+                // Use YouTube embed with autoplay, mute (required for autoplay), and start time
+                // User can unmute manually after autoplay begins
                 const startParam = meta.start ? `&start=${meta.start}` : '';
-                const embedUrl = `https://www.youtube.com/embed/${meta.youtube}?autoplay=1&controls=1${startParam}`;
+                const embedUrl = `https://www.youtube.com/embed/${meta.youtube}?autoplay=1&mute=1&controls=1${startParam}`;
                 console.log('Loading YouTube video:', embedUrl);
                 ytFrame.src = embedUrl;
             } else if (ytFrame) {
