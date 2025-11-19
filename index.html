@@ -3,85 +3,102 @@
 <html lang="en">
 <head>
    <title>Collectors Corner</title>
-   <!-- ✅ Keep only NEW external CSS -->
    <link rel="stylesheet" href="styles.css">
    <script src="script.js"></script>
 
-   <!-- ✅ Internal CSS from original -->
    <style>
-      /* NAVIGATION */
-     
-      /* CONTEXT + TITLE */
-     
-      #title {
-         width: 804px;
-         height: 232px;
-         margin: 40px auto;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         border-radius: 20px;
-      }
-      #title h1 {
-         font-size: 3.5rem;
-         text-align: center;
-         margin: 0;
-      }
-      #Why {
-         max-width: 800px;
-         margin: 40px auto;
-         padding: 30px 20px;
-         text-align: center;
-         border-radius: 15px;
-      }
-      #Why h2 {
-         font-size: 2rem;
-         margin-bottom: 20px;
-      }
-      #Why p {
-         font-size: 1.1rem;
-         line-height: 1.6;
+      /* --- Modernized Home Page Styles (local to index.html) --- */
+
+      :root{
+         /* colors pulled from styles.css */
+         --bg: #f8f8d8;    /* body background from styles.css */
+         --card: #ffffff;  /* white cards / header / footer */
+         --muted: #555555; /* subtle text (copyright) */
+         --accent: #000000;/* button accent (styles.css used black for .btn) */
+         --dark: #111111;  /* main text color from styles.css */
       }
 
-      /* MAIN SECTION */
-      #main {
-         display: grid;
-         grid-template-columns: 1fr 1fr;
-         gap: 20px;
-         padding: 20px;
-      }
-      #left, #right {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         text-align: center;
-         padding: 20px;
-         border-radius: 10px;
+      *{box-sizing: border-box}
+      body{
+         margin:0;
+         font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+         background: linear-gradient(180deg, var(--bg), var(--bg));
+         color:var(--dark);
+         -webkit-font-smoothing:antialiased;
       }
 
-      /* FEATURED SECTION */
-      #feat {
-         display: grid;
-         grid-template-columns: repeat(3, 1fr);
-         gap: 20px;
-         padding: 40px 20px;
-         text-align: center;
-      }
-      #feat h2 {
-         grid-column: 1 / -1;
-         margin-bottom: 20px;
-      }
-      #feat > div {
-         padding: 20px;
-         border-radius: 10px;
+      /* Header (match styles.css exactly) */
+      .site-header {
+         display: flex; /* Uses flexbox layout */
+         justify-content: space-between; /* Spaces items left and right */
+         align-items: center; /* Vertically centers items */
+         padding: 1rem 3rem; /* 1rem top/bottom, 3rem sides (matches styles.css) */
+         background: #fff; /* White background */
+         border-bottom: 1px solid #ddd; /* Light gray bottom border */
+         position: sticky;
+         top: 0;
+         z-index: 50;
       }
 
-      /* Right col wrapper (unused but kept) */
-      #right-col {
-         display: flex;
-         flex-direction: column;
-         gap: 20px;
-         color: rgb(255, 0, 0);
+      .site-header .logo img { height: 65px; width: auto; }
+
+      .site-header nav { flex: 1; display: flex; justify-content: center; align-items: center; gap: 4rem; }
+      .site-header nav span { color: #000; font-weight: 500; font-size: 1rem; text-decoration: none; }
+      .site-header nav a { color: #000; font-weight: 500; font-size: 1rem; text-decoration: underline; }
+      .site-header .btn { background: #000; color: #fff; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600; white-space: nowrap; text-decoration: none; }
+
+      /* Page container */
+      #context{max-width:1200px;margin:40px auto;padding:0 20px}
+
+      /* Hero / Title */
+      #title{
+         display:flex;align-items:center;justify-content:center;
+         padding:48px;border-radius:16px;margin-bottom:30px;
+         background:linear-gradient(135deg, rgba(231,76,60,0.06), rgba(44,62,80,0.03));
+         box-shadow:0 12px 30px rgba(31,41,55,0.04);
+      }
+      #title h1{font-size:2.6rem;margin:0;color:var(--dark);line-height:1.05;text-align:center}
+
+      /* Why block */
+      #Why{max-width:900px;margin:36px auto;padding:36px 32px;text-align:center;border-radius:14px;background:var(--card);box-shadow:0 10px 30px rgba(31,41,55,0.04)}
+      #Why h2{font-size:2rem;margin-bottom:12px;color:var(--dark)}
+      #Why h4{font-size:1.05rem;color:var(--muted);line-height:1.8;margin:0}
+
+      /* Main 2-col section */
+      #main{display:grid;grid-template-columns:1fr 1fr;gap:36px;padding:20px 0}
+      #left,#right{background:var(--card);padding:30px;border-radius:14px;box-shadow:0 10px 25px rgba(31,41,55,0.04);text-align:left}
+      #left h4,#right h4{font-size:1.2rem;margin:0 0 12px;color:var(--dark)}
+      #left ul{margin:12px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
+      #left ul li{margin-bottom:8px}
+
+      /* Images in content: use classes rather than inline styles where possible */
+      #left img,#right img{width:100%;height:340px;max-height:380px;object-fit:cover;border-radius:12px;display:block;margin-bottom:18px}
+
+      #right p{color:var(--muted);line-height:1.8}
+
+      /* Featured grid */
+      #feat{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:40px 0}
+      #feat h2{grid-column:1/-1;text-align:center;font-size:2rem;margin-bottom:6px}
+      #feat > div{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 10px 30px rgba(31,41,55,0.04);text-align:left}
+      #feat img{width:100%;height:260px;object-fit:cover;border-radius:10px;margin-bottom:12px}
+      #feat h4{font-size:1rem;margin:8px 0;color:var(--dark)}
+      #feat p{color:var(--muted);font-size:0.95rem}
+
+   /* Footer */
+   footer{margin-top:40px;padding:28px 20px;background:var(--card);border-top:1px solid #ddd}
+      .footer-container{max-width:1200px;margin:0 auto;display:flex;gap:40px;align-items:flex-start;justify-content:space-between}
+      .footer-left img{height:56px}
+      .footer-right{display:flex;gap:40px;color:var(--muted)}
+      .footer-right h4{margin:0 0 6px;color:var(--dark)}
+      .copyright{text-align:center;color:var(--muted);margin-top:18px}
+
+      /* Small screens */
+      @media (max-width:900px){
+         #main{grid-template-columns:1fr}
+         #feat{grid-template-columns:1fr}
+         .footer-container{flex-direction:column;gap:18px}
+         #title h1{font-size:1.8rem}
+         #left img,#right img{height:260px}
       }
    </style>
 </head>
@@ -118,7 +135,7 @@
    <div id="main">
       <div id="left">
          <a href="https://depositphotos.com/photo/books-collection-3699706.html">
-            <img src="./images/books.jpg" alt="Books" style="width:624px; height:341px; max-width:600px; border-radius:10px; margin-bottom:15px;">
+            <img src="./images/books.jpg" alt="Books">
          </a>
          <h4>Fun facts</h4>
          <ul>
@@ -132,7 +149,7 @@
 
       <div id="right">
          <a href="https://www.alamy.com/stock-photo-cd-collection-310398354.html">
-            <img src="./images/cds.jpg" alt="Cds" style="width:624px; height:341px; max-width:600px; border-radius:10px; margin-bottom:15px;">
+            <img src="./images/cds.jpg" alt="Cds">
          </a>
          <h4>The Thrill of it</h4>
          <p>Collecting is part treasure hunt, part personal archive. It’s about discovery, organization, and connecting with others who share your passion. At the end of the day, a collection is more than objects—it’s your story on display.</p>
@@ -142,24 +159,24 @@
    <div id="feat">
       <h2>Featured News</h2>
       <div id="one">
-         <a href="https://depositphotos.com/photo/books-collection-3699706.html">
-            <img src="./images/ightsab.png" alt="lightsaber" style="width:305px; height:305px; border-radius:10px; margin-bottom:15px;">
+         <a href="https://news.justcollecting.com/star-wars-series-record-set-by-darth-vader-lightsaber-3-65-million-sale/">
+            <img src="./images/ightsab.png" alt="lightsaber">
          </a>
          <h4>“$3.6 million Darth Vader lightsaber breaks Star Wars prop record”</h4>
          <p>Article by Colin Ricketts</p>
       </div>
 
       <div id="two">
-         <a href="https://www.alamy.com/stock-photo-cd-collection-310398354.html">
-            <img src="./images/pokemon.png" alt="Pokémon" style="width:305px; height:305px; border-radius:10px; margin-bottom:15px;">
+         <a href="https://tcg-stadium.com/blogs/news/breaking-news-team-rocket-blasts-back-ultra-premium-collection-announced">
+            <img src="./images/pokemon.png" alt="Pokémon">
          </a>
          <h4>“BREAKING NEWS: Team Rocket Blasts Back: Ultra Premium Collection Announced!”</h4>
          <p>Article by TCG Stadium</p>
       </div>
 
       <div id="three">
-         <a href="https://www.alamy.com/stock-photo-cd-collection-310398354.html">
-            <img src="./images/mainly.jpg" alt="Man and son" style="width:305px; height:305px; border-radius:10px; margin-bottom:15px;">
+         <a href="https://www.artofmanliness.com/living/leisure/how-to-start-a-collection-50-manly-collection-ideas/">
+            <img src="./images/mainly.jpg" alt="Man and son">
          </a>
          <h4>“How to Start a Collection & 50+ Manly Collection Ideas”</h4>
          <p>Article by Jeremy Anderberg</p>

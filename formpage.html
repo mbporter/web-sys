@@ -1,108 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"> <!-- sets character encoding for correct text rendering -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ensures responsive scaling on mobile devices -->
   <title>Collectors Corner - Join Our Collection</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> <!-- imports Inter font family -->
+  <link rel="stylesheet" href="styles.css"> <!-- external stylesheet for site-wide styles -->
+  <meta name="description" content="Join Collectors Corner."> <!-- SEO meta description -->
+  <link rel="canonical" href="https://mbporter.github.io/web-sys/formpage.html"> <!-- preferred URL for search engines -->
+  <meta property="og:title" content="Collectors Corner - Join Our Collection"> <!-- Open Graph title for social sharing -->
+  <meta property="og:description" content="Submit your collection to Collectors Corner."> <!-- Open Graph description -->
+  <meta property="og:url" content="https://mbporter.github.io/web-sys/formpage.html"> <!-- Open Graph URL -->
+  <meta property="og:image" content="https://mbporter.github.io/web-sys/images/GettyImages-1360671016-9778338fe2ea4066b330935ba0939c59.webp"> <!-- preview image for social sharing -->
 
   <style>
-/* HERO (Form Page) */
+/* HERO (Form Page) – main intro section with text + image grid */
 .join-hero {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 3rem;
+  display: flex; /* lays out hero text and images side by side */
+  justify-content: space-between; /* separates text and image sections */
+  gap: 2rem; /* spacing between text and images */
+  padding: 3rem; /* roomy padding around hero section */
 }
 .hero-text {
-  flex: 1;
+  flex: 1; /* allows text to expand evenly */
 }
 .hero-text h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2rem; /* large, readable hero title */
+  margin-bottom: 1rem; /* space below heading */
 }
 .hero-text .sub {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 1rem;
+  font-size: 1.2rem; /* slightly smaller subtitle */
+  color: #555; /* muted color for subtitle */
+  margin-bottom: 1rem; /* spacing before next line */
+}
+.hero-text p:nth-of-type(2) {
+  margin-top: 4rem;    /* creates space before “Do you have a collection…” */
 }
 .hero-images {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  flex: 1;
+  display: grid; /* creates a grid of hero images */
+  grid-template-columns: repeat(2, 1fr); /* two columns per row */
+  gap: 1rem; /* space between images */
+  flex: 1; /* allows it to share space with text evenly */
 }
 .hero-images img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
+  width: 100%; /* fills grid cell */
+  height: 200px; /* consistent height for all images */
+  object-fit: cover; /* crops image nicely to fit */
+  border-radius: 6px; /* rounded corners for visual consistency */
 }
 
-/* FORM */
+/* FORM SECTION – layout and structure for the join form */
 .join-form {
-  padding: 2rem 3rem;
+  padding: 2rem 3rem; /* spacing around the form */
 }
 .join-form h2 {
-  margin-bottom: 1.5rem;
-  font-size: 1.3rem;
+  margin-bottom: 1.5rem; /* separates title from form fields */
+  font-size: 1.3rem; /* consistent section heading size */
 }
 .form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem 2rem;
+  display: grid; /* grid layout for form inputs */
+  grid-template-columns: repeat(2, 1fr); /* two-column layout */
+  gap: 1rem 2rem; /* spacing between form fields */
 }
 .form-grid label {
   display: flex;
-  flex-direction: column;
-  font-weight: 500;
+  flex-direction: column; /* stack label and input */
+  font-weight: 500; /* semi-bold labels */
 }
-.form-grid input {
-  margin-top: 0.3rem;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: inherit;
+.form-grid input[type="text"],
+.form-grid input[type="email"],
+.form-grid input[type="file"],
+.form-grid textarea {
+  margin-top: 0.3rem; /* small gap under labels */
+  padding: 0.5rem; /* inner spacing for inputs */
+  border: 1px solid #ccc; /* subtle gray border */
+  border-radius: 6px; /* soft corners */
+  font-family: inherit; /* keeps site font consistent */
+  font-size: 0.95rem; /* slightly smaller input text */
 }
+.form-grid input[type="file"] {
+  padding: 0.35rem; /* smaller padding for file inputs */
+}
+
+/* IMAGE PREVIEW ROWS – small thumbnails under file fields */
+.preview-row {
+  margin-top: 0.5rem; /* space above previews */
+  display: flex; /* line up thumbnails */
+  gap: 0.5rem; /* space between images */
+  flex-wrap: wrap; /* allows wrapping to multiple lines */
+}
+.preview-row img {
+  width: 90px; /* small preview size */
+  height: 70px;
+  object-fit: cover; /* crops neatly to fit box */
+  border-radius: 6px; /* matches other rounded corners */
+  border: 1px solid #ddd; /* light border to define edges */
+}
+
+/* RESPONSIVE LAYOUT – adjusts for smaller screens */
+@media (max-width: 800px) {
+  .join-hero { flex-direction: column; } /* stacks hero vertically */
+  .hero-images { grid-template-columns: repeat(2, 1fr); } /* keeps two columns in small layout */
+  .form-grid { grid-template-columns: 1fr; } /* single column form layout */
+}
+
+/* SUBMIT BUTTON – primary CTA styling */
 .submit-btn {
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  background: #000;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
+  margin-top: 2rem; /* space above button */
+  padding: 0.75rem 1.5rem; /* comfortable clickable area */
+  border: none; /* removes default border */
+  border-radius: 6px; /* rounded button */
+  background: #000; /* solid black background */
+  color: #fff; /* white text for contrast */
+  font-weight: 600; /* makes text bold */
+  cursor: pointer; /* pointer cursor for interactivity */
 }
 .submit-btn:hover {
-  background: #333;
+  background: #333; /* dark gray hover color */
 }
-</style>
 
+/* ERROR + HELP NOTES – used under form fields */
+.error-note {
+  color: #a00; /* red for errors */
+  font-size: 0.9rem; /* smaller, secondary text size */
+  margin-top: 0.25rem; /* space above note */
+  display: none; /* hidden until needed */
+}
+.help-note {
+  font-size: 0.9rem; /* small, descriptive text */
+  color: #666; /* muted gray tone */
+  margin-top: 0.25rem; /* spacing above note */
+}
 
+/* FILE INPUT STYLING – consistent design for upload fields */
+input[type="file"] {
+  background-color: #fff; /* white background */
+  border: 1px solid #ccc; /* light gray border */
+  border-radius: 6px; /* matches overall design */
+  padding: 0.4rem; /* inner padding */
+  font-family: inherit; /* keeps font consistent */
+  font-size: 0.95rem;
+  width: 100%; /* stretches input to full width */
+  color: #333; /* dark text color */
+}
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
+  width: 100%; /* ensures fields align consistently */
+  box-sizing: border-box; /* includes padding in width calc */
+}
+
+/* SCREEN READER ONLY – hides visually but remains accessible */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; /* hides content offscreen */
+  clip: rect(0 0 0 0); /* hides in visible area */
+  white-space: nowrap;
+  border: 0;
+}
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header class="site-header">
     <div class="logo">
-      <img src="images/Logo.png" alt="Collectors Corner Logo">
+      <a href="index.html"><img src="images/Logo.png" alt="Collectors Corner Logo"></a> <!-- logo links to homepage -->
     </div>
     <nav>
-      <span>Featured Collections:</span>
+      <span>Featured Collections:</span> <!-- nav label -->
       <a href="Mac.html">Mac’s Collection</a>
-      <a href="Calixpage.html">Calix’s Collection</a>
-      <a href="#" class="btn">Contact</a>
+      <a href="Calixpage">Calix’s Collection</a>
+      <a href="#" class="btn">Contact</a> <!-- placeholder contact link -->
     </nav>
   </header>
-
+<main>
   <!-- Hero / Intro -->
   <section class="join-hero">
     <div class="hero-text">
       <h1>Become part of <em>our</em> Collection.</h1>
       <p class="sub">Join a growing group of collectors on our website.</p>
-      <p>Do you have a collection you’re passionate about?</p>
-      <p>Why not show the world? Whether you’re into vintage coins, delicate teacups, funky gadgets, or quirky keepsakes, every collection says something unique about you. Share your passion, connect with fellow collectors, and let your treasures shine in our growing community!</p>
+      <p style="font-size: 1.1rem;">Do you have a collection you’re passionate about?</p>
+      <p style="font-size: 1.1rem;">Why not show the world? Whether you’re into vintage coins, delicate teacups, funky gadgets, or quirky keepsakes, every collection says something unique about you. Share your passion, connect with fellow collectors, and let your treasures shine in our growing community!</p>
     </div>
     <div class="hero-images">
       <img src="images/GettyImages-1360671016-9778338fe2ea4066b330935ba0939c59.webp" alt="collection image 1">
@@ -114,55 +194,80 @@
 
   <!-- Form -->
   <section class="join-form">
-    <h2>Enter your details below:</h2>
-    <form>
+    <h2 style="color: #333; text-decoration: underline;">Enter your details below:</h2>
+    <form novalidate> <!-- novalidate allows custom validation handling in JS -->
       <div class="form-grid">
         <label>
           Name
-          <input type="text" name="name" placeholder="Jane">
+          <input type="text" name="name" placeholder="Jane" required>
+          <span class="error-note" data-error-for="name" aria-hidden="true"></span> <!-- inline error placeholder -->
         </label>
+
+
         <label>
           Collection Topic
-          <input type="text" name="topic" placeholder="Baseballs">
+          <input type="text" name="topic" placeholder="Baseballs" required>
+          <span class="error-note" data-error-for="topic" aria-hidden="true"></span>
         </label>
+
         <label>
           Email address
-          <input type="email" name="email" placeholder="email@janesfakedomain.net">
+          <input type="email" name="email" placeholder="email@janesfakedomain.net" required>
+          <span class="error-note" data-error-for="email" aria-hidden="true"></span>
         </label>
+
         <label>
           Description of Collection
-          <input type="text" name="description" placeholder="Enter here">
+          <input type="text" name="description" placeholder="Enter here" required>
+          <span class="error-note" data-error-for="description" aria-hidden="true"></span>
         </label>
+
         <label>
           Featured Item
-          <input type="text" name="featured-item" placeholder="Enter here">
+          <input type="text" name="featured-item" placeholder="Enter here" required>
+          <span class="error-note" data-error-for="featured-item" aria-hidden="true"></span>
         </label>
+
+        <!-- FEATURED IMAGE (file input) -->
         <label>
           Image of Featured Item
-          <input type="text" name="featured-image" placeholder="Enter here">
+          <input type="file" name="featured-image" accept="image/*" aria-describedby="featured-help">
+          <span id="featured-help" class="help-note">Recommended: JPG/PNG. Max 5MB.</span> <!-- help text for file input -->
+          <span class="preview-row" data-preview-for="featured-image" aria-hidden="true"></span> <!-- preview container -->
+          <span class="error-note" data-error-for="featured-image" aria-hidden="true"></span>
         </label>
+
         <label>
           Description of Featured Item
           <input type="text" name="featured-description" placeholder="Enter here">
+          <span class="error-note" data-error-for="featured-description" aria-hidden="true"></span>
         </label>
+
+        <!-- OTHER IMAGES (multiple file input) -->
         <label>
           Other Collection images
-          <input type="text" name="other-images" placeholder="Enter here">
+          <input type="file" name="other-images" accept="image/*" multiple aria-describedby="other-help">
+          <span id="other-help" class="help-note">You can select multiple images. Up to 6 images, each max 5MB.</span>
+          <span class="preview-row" data-preview-for="other-images" aria-hidden="true"></span>
+          <span class="error-note" data-error-for="other-images" aria-hidden="true"></span>
         </label>
+
         <label>
           Other Collection fun facts
           <input type="text" name="fun-facts" placeholder="Enter here">
+          <span class="error-note" data-error-for="fun-facts" aria-hidden="true"></span>
         </label>
       </div>
-      <button type="submit" class="submit-btn">Submit</button>
+
+      <button type="submit" class="submit-btn">Submit</button> <!-- primary submit button -->
     </form>
   </section>
-
+</main>
   <footer>
   <div class="footer-container">
     <!-- Left: logo + socials -->
     <div class="footer-left">
-      <a href="index.html"><img src="images/Logo.png" alt="Collectors Corner Logo"></a>
+      <a href="index.html"><img src="images/Logo.png" alt="Collectors Corner Logo"></a> <!-- footer logo -->
       <div class="socials">
         <a href="https://facebook.com" class="icon fb" aria-label="Facebook"></a>
         <a href="https://linkedin.com" class="icon li" aria-label="LinkedIn"></a>
@@ -194,8 +299,203 @@
 
   <p class="copyright">© Collectors corner</p>
 </footer>
+
+<script>
+(function () {
+  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+  const MAX_OTHER_IMAGES = 6; // max number of additional images allowed
+
+  const form = document.querySelector('form');
+  if (!form) return; // safety: stop if form not found
+
+  const byName = (n) => form.querySelector(`[name="${n}"]`); // helper to find fields by name
+  const previewFor = (name) => form.querySelector(`.preview-row[data-preview-for="${name}"]`); // find preview container
+  const errorFor = (name) => form.querySelector(`.error-note[data-error-for="${name}"]`); // find error element
+
+  const fields = {
+    name: byName('name'),
+    topic: byName('topic'),
+    email: byName('email'),
+    description: byName('description'),
+    featuredItem: byName('featured-item'),
+    featuredImage: byName('featured-image'), // file input
+    featuredDescription: byName('featured-description'),
+    otherImages: byName('other-images'),     // multi file input
+    funFacts: byName('fun-facts')
+  };
+
+  const isValidEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); // basic email validation regex
+
+  const setErr = (el, msg) => {
+    if (!el) return;
+    if (el.type === 'file') {
+      const errEl = errorFor(el.name);
+      if (errEl) {
+        errEl.textContent = msg || '';
+        errEl.style.display = msg ? 'block' : 'none';
+        errEl.setAttribute('aria-hidden', msg ? 'false' : 'true');
+      }
+      try { el.setCustomValidity(msg || ''); } catch (e) {} // set validity for native constraint UI
+    } else {
+      try { el.setCustomValidity(msg || ''); } catch (e) {}
+      const errEl = errorFor(el.name);
+      if (errEl) {
+        errEl.textContent = msg || '';
+        errEl.style.display = msg ? 'block' : 'none';
+        errEl.setAttribute('aria-hidden', msg ? 'false' : 'true');
+      }
+    }
+  };
+
+  function renderPreviewForFileInput(inputEl, container) {
+    if (!container) return;
+    container.innerHTML = ''; // clear old previews
+    const files = inputEl.files || [];
+    if (!files.length) {
+      container.setAttribute('aria-hidden', 'true'); // hide if no files
+      return;
+    }
+    container.setAttribute('aria-hidden', 'false'); // show previews
+
+    Array.from(files).forEach(file => {
+      if (!file.type.startsWith('image/')) return; // skip non-images
+      const img = document.createElement('img');
+      img.alt = file.name; // use filename as alt for preview
+      container.appendChild(img);
+
+      const reader = new FileReader();
+      reader.onload = (e) => img.src = e.target.result; // populate preview when read
+      reader.readAsDataURL(file);
+    });
+  }
+
+  function getValidationMessage(name) {
+    const el = fields[name];
+    if (!el) return '';
+    const type = el.type;
+    if (type === 'file') {
+      const files = el.files || [];
+      if (name === 'featuredImage') {
+        if (files.length === 0) return ''; // featured image optional
+        const f = files[0];
+        if (!f.type.startsWith('image/')) return 'Featured file must be an image.';
+        if (f.size > MAX_FILE_SIZE) return 'Featured image must be 5MB or smaller.';
+        return '';
+      } else if (name === 'otherImages') {
+        if (files.length === 0) return '';
+        if (files.length > MAX_OTHER_IMAGES) return `You may upload up to ${MAX_OTHER_IMAGES} images.`;
+        for (let f of files) {
+          if (!f.type.startsWith('image/')) return 'One or more files are not images.';
+          if (f.size > MAX_FILE_SIZE) return 'Each image must be 5MB or smaller.';
+        }
+        return '';
+      }
+      return '';
+    }
+
+    const val = (el.value || '').trim();
+
+    switch (name) {
+      case 'name':
+        if (!val) return 'Name is required.';
+        if (val.length < 2) return 'Name must be at least 2 characters.';
+        return '';
+      case 'topic':
+        if (!val) return 'Collection topic is required.';
+        return '';
+      case 'email':
+        if (!val) return 'Email is required.';
+        if (!isValidEmail(val)) return 'Please enter a valid email address.';
+        return '';
+      case 'description':
+        if (!val) return 'Description is required.';
+        if (val.length < 10) return 'Description should be at least 10 characters.';
+        return '';
+      case 'featuredItem':
+        if (!val) return 'Featured item is required.';
+        return '';
+      case 'funFacts':
+        if (val.length > 300) return 'Fun facts must be 300 characters or fewer.';
+        return '';
+      default:
+        return '';
+    }
+  }
+
+  // wire up input/change handlers
+  Object.keys(fields).forEach((key) => {
+    const el = fields[key];
+    if (!el) return;
+
+    const notify = () => {
+      const msg = getValidationMessage(key);
+      setErr(el, msg);
+      if (msg && el.type !== 'file') el.reportValidity(); // show native tooltip for non-file fields
+    };
+
+    if (el.type === 'file') {
+      el.addEventListener('change', () => {
+        const container = previewFor(el.name);
+        renderPreviewForFileInput(el, container); // update thumbnails on file change
+        notify();
+      });
+    } else {
+      el.addEventListener('input', notify); // validate on input
+      el.addEventListener('blur', () => {
+        const msg = getValidationMessage(key);
+        setErr(el, msg);
+        if (msg) el.reportValidity(); // show message on blur if invalid
+      });
+    }
+  });
+
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault(); // prevent actual submit for demo/JS handling
+
+    let firstInvalid = null;
+    Object.keys(fields).forEach((key) => {
+      const el = fields[key];
+      if (!el) return;
+      const msg = getValidationMessage(key);
+      setErr(el, msg);
+      if (msg && !firstInvalid) firstInvalid = el; // capture first invalid field
+    });
+
+    if (firstInvalid) {
+      if (firstInvalid.type === 'file') {
+        const errEl = errorFor(firstInvalid.name);
+        if (errEl) errEl.scrollIntoView({behavior: 'smooth', block: 'center'}); // focus visible error
+      } else {
+        firstInvalid.reportValidity(); // show browser validity UI
+      }
+      return;
+    }
+
+    // All validation passed — show success popup
+    alert("Form Successfully Submitted!"); // placeholder success action
+
+    // reset form
+    form.reset(); // clears inputs
+
+    // explicit clear file inputs (some browsers keep file inputs visually set)
+    const featuredInput = fields.featuredImage;
+    const otherInput = fields.otherImages;
+    if (featuredInput) try { featuredInput.value = ''; } catch(e) {} // defensive clear
+    if (otherInput) try { otherInput.value = ''; } catch(e) {}
+
+    // clear previews
+    const previewRows = form.querySelectorAll('.preview-row');
+    previewRows.forEach(r => { r.innerHTML = ''; r.setAttribute('aria-hidden', 'true'); });
+
+    // clear any visible error messages
+    const errEls = form.querySelectorAll('.error-note');
+    errEls.forEach(e => { e.textContent = ''; e.style.display = 'none'; e.setAttribute('aria-hidden', 'true'); });
+
+    // TODO: replace with actual submit logic (AJAX / form action)
+  });
+
+})();
+</script>
 </body>
 </html>
 
-
-<!-- TODO: MAKE SURE TO USE 3 DIFFERENT TYPES OF CSS FOR FINAL VERSION -->

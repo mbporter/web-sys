@@ -1,142 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"> <!-- sets character encoding for correct text display -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes site responsive on mobile -->
   <title>Collectors Corner - Calix’s Collection</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"> <!-- imports Inter font -->
+  <link rel="stylesheet" href="styles.css"> <!-- links external CSS file -->
+  <meta name="description" content="Calix’s personal art collection"> <!-- SEO description for search engines -->
+  <link rel="canonical" href="https://mbporter.github.io/web-sys/Calixpage"> <!-- specifies preferred page URL -->
+  <meta property="og:title" content="Collectors Corner - Calix’s Collection"> <!-- sets social share title -->
+  <meta property="og:description" content="Calix’s personal art collection"> <!-- sets social share description -->
+  <meta property="og:url" content="https://mbporter.github.io/web-sys/Calixpage"> <!-- Open Graph URL -->
+  <meta property="og:image" content="https://mbporter.github.io/web-sys/images/20250907_144130.jpg"> <!-- preview image for social sharing -->
 
   <style>
-/* HERO (Collection) */
+/* HERO (Collection) – top section showing Calix’s artworks */
 .hero {
-  text-align: center;
-  padding: 2rem 1rem;
+  text-align: center; /* centers text and images */
+  padding: 2rem 1rem; /* space around the hero section */
 }
 .hero h1 {
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
+  margin-bottom: 1.5rem; /* separates heading from images */
+  font-size: 1.8rem; /* main heading size */
 }
 .hero-images {
-  display: flex;
-  justify-content: center;
-  gap: 9rem;
+  display: flex; /* aligns hero images in a row */
+  justify-content: center; /* centers the images horizontally */
+  gap: clamp(2rem, 6vw, 9rem); /* responsive gap between images */
 }
 .hero-images img {
-  width: 150px;
-  border-radius: 6px;
+  width: 150px; /* consistent image width */
+  border-radius: 6px; /* rounded corners for style */
 }
 
-/* ABOUT */
+/* ABOUT – “About Me” section layout */
 .about {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 1.5rem 2rem;
+  display: flex; /* side-by-side layout for text and image */
+  align-items: center; /* vertical centering */
+  gap: 2rem; /* spacing between image and text */
+  padding: 1.5rem 2rem; /* section padding */
 }
 .about img {
-  width: 220px;
-  border-radius: 6px;
+  width: 220px; /* image size in about section */
+  border-radius: 6px; /* smooth rounded edges */
 }
 .about h2 {
   margin-top: 0;
-  font-size: 1.3rem;
+  font-size: 1.3rem; /* heading slightly smaller than hero */
 }
 
-/* WHY */
+/* WHY – reason behind art creation */
 .why {
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2rem; /* consistent padding */
 }
 .why h2 {
-  font-size: 1.3rem;
+  font-size: 1.3rem; /* heading size */
 }
 
-/* FEATURED */
+/* FEATURED – highlight a main artwork */
 .featured {
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2rem; /* even spacing around section */
 }
 .featured-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex; /* side-by-side layout of image + text */
+  justify-content: center; /* center align horizontally */
+  align-items: center; /* vertical centering */
+  gap: 3rem; /* space between text and images */
+  max-width: 1200px; /* limits section width for readability */
+  margin: 0 auto; /* centers the content */
 }
 .image-stack {
-  display: flex;
+  display: flex; /* stack featured images vertically */
   flex-direction: column;
-  gap: 1rem;
+  gap: 1rem; /* space between stacked images */
 }
 .featured img {
-  width: 260px;
-  border-radius: 6px;
+  width: 260px; /* featured image size */
+  border-radius: 6px; /* rounded edges */
 }
 .featured .text {
-  flex: 1;
-  max-width: 55%;
+  flex: 1; /* allows flexible width */
+  max-width: 55%; /* readable text width */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 auto; /* center text block */
 }
 .featured .text h2 {
   font-size: 1.3rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.75rem; /* space below heading */
 }
 .featured .text p {
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.5; /* better readability */
 }
 
-/* OTHER */
+/* OTHER – rotating artwork gallery */
 .other {
-  padding: 1.5rem 2rem;
-  text-align: center;
+  padding: 1.5rem 2rem; /* spacing around gallery */
+  text-align: center; /* center title and content */
 }
 .other h2 {
-  font-size: 1.3rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.4rem; /* section heading */
+  margin-bottom: 1.5rem; /* space below heading */
 }
 .other-content {
-  display: flex;
+  display: flex; /* align arrows, image, and text horizontally */
+  align-items: center; /* vertical centering */
+  justify-content: center; /* centers entire row */
+  gap: 2rem; /* spacing between elements */
+  text-align: left;
+  flex-wrap: nowrap; /* keeps items in one line */
+}
+
+/* Arrows – accessible buttons for gallery navigation */
+.other .arrow {
+  font-size: 1.6rem; /* larger icon size for visibility */
+  cursor: pointer; /* indicates interactivity */
+  user-select: none; /* prevents accidental text selection */
+  align-self: center;
+  flex: 0 0 48px; /* fixed arrow button size */
+  height: 48px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  text-align: left;
+  border-radius: 6px; /* rounded buttons */
+  background: transparent; /* no fill */
+  border: none; /* removes default border */
+  transition: background .15s ease, box-shadow .12s ease; /* smooth hover effect */
 }
+.other .arrow:hover { background: rgba(0,0,0,0.05); } /* light hover feedback */
+.other .arrow:focus {
+  outline: 3px solid Highlight; /* keyboard focus ring */
+  outline-offset: 2px;
+  background: rgba(0,0,0,0.04); /* subtle focus background */
+}
+
+/* Gallery image styling */
 .other img {
-  width: 180px;
-  border-radius: 6px;
+  width: 280px;
+  height: 280px; /* standardized image size */
+  object-fit: contain; /* ensures full image shows */
+  border-radius: 8px; /* matches theme */
+  flex: 0 0 280px;
+  transition: opacity .3s ease; /* fade transition for switching images */
 }
-.other .arrow {
-  font-size: 1.2rem;
-  cursor: pointer;
-  user-select: none;
-  align-self: center;
+
+/* Text box next to gallery image */
+.other .details {
+  width: 520px;
+  min-width: 400px;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem; /* space between title and paragraph */
+  transition: opacity .3s ease; /* fade when changing */
 }
-</style>
+.other .details h3 {
+  margin: 0;
+  font-size: 1.1rem; /* title font size */
+}
+.other .details p {
+  margin: 0;
+  line-height: 1.6; /* comfortable paragraph spacing */
+  font-size: 1rem; /* text size */
+}
 
+/* Fade helper – used during gallery transitions */
+.fade { opacity: 0.2; }
 
+/* Responsive – adjusts layout for small screens */
+@media (max-width: 800px) {
+  .other-content { flex-direction: column; gap: 1rem; } /* stacks vertically on mobile */
+  .other img { width: 300px; height: 300px; } /* increases image size for small screens */
+  .other .details { width: 90%; min-width: 0; text-align: center; } /* adjusts text box */
+}
+
+/* Screen reader only helper – hides text visually but keeps accessible */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+  </style>
 </head>
+
 <body>
-  <!-- Header -->
   <header class="site-header">
     <div class="logo">
-      <a href="index.html"><img src="images/Logo.png" alt="Collectors Corner Logo"></a>
+      <a href="index.html"><img src="images/Logo.png" alt="Collectors Corner Logo"></a> <!-- logo links back to homepage -->
     </div>
-    <nav>
+    <nav> <!-- main navigation links -->
       <span>Featured Collections:</span>
       <a href="Mac.html">Mac’s Collection</a>
-      <a href="#">Calix’s Collection</a>
-      <a href="formpage.html" class="btn">Contact</a>
+      <a href="#">Calix’s Collection</a> <!-- current page highlighted -->
+      <a href="formpage.html" class="btn">Contact</a> <!-- link to contact form -->
     </nav>
   </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Calix’s Passion for Collecting: Their Art</h1>
+<main>
+  <section class="hero"> <!-- top hero showcasing multiple artworks -->
+    <h1 style="font-size:2rem; font-weight:600;">Calix’s Passion for Collecting: Their Art</h1>
     <div class="hero-images">
       <img src="images/20241108_090701.webp" alt="art piece 1">
       <img src="images/20240411_080707-1.webp" alt="art piece 2">
@@ -144,8 +210,7 @@
     </div>
   </section>
 
-  <!-- About -->
-  <section class="about">
+  <section class="about"> <!-- bio and background section -->
     <img src="images/20250907_144130.jpg" alt="Calix art">
     <div>
       <h2>About Me:</h2>
@@ -156,8 +221,7 @@
     </div>
   </section>
 
-  <!-- Why I create -->
-  <section class="why">
+  <section class="why"> <!-- explanation of creative motivation -->
     <h2>Why I create Art:</h2>
     <p>I started doing ceramics in high school because I wasn’t as good at 2d art as I was with 3d art. 
     The majority of my art contains darker themes due to my sources of inspiration, including horror games 
@@ -165,83 +229,135 @@
     in my life. I think art can connect people together.</p>
   </section>
 
-  <!-- Featured Piece -->
-<section class="featured">
-  <div class="featured-content">
-    <!-- Left: stacked images -->
-    <div class="image-stack">
-      <img src="images/20250408_095040-1.webp" alt="featured piece 1">
-      <img src="images/20250408_091728-1.webp" alt="featured piece 2">
+  <section class="featured"> <!-- showcases a primary or highlighted artwork -->
+    <div class="featured-content">
+      <div class="image-stack">
+        <img src="images/20250408_095040-1.webp" alt="featured piece 1">
+        <img src="images/20250408_091728-1.webp" alt="featured piece 2">
+      </div>
+      <div class="text">
+        <h2>Featured Piece: Protective Elements</h2>
+        <p>Protective Elements is a piece that represents pagan symbols and elements. The overall shape is in a pentacle which represents protection. Each tip of the star in a pentacle is different elements. Going clockwise from the top there is spirit, water, fire, earth and air. Additionally, the middle represents balance and unity which I've symbolized with the World Tree. The symbols around the outside of the star are symbols used often in pagan practices. Starting from top right going clockwise there is the ankh, triskellion, solar cross, triple moon goddess, and horned god.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="other"> <!-- rotating gallery of remaining pieces -->
+    <h2>Other Collection Items</h2>
+    <div class="other-content" id="otherContent">
+      <!-- accessible buttons for gallery navigation -->
+      <button class="arrow" id="leftArrow" type="button" aria-label="Previous artwork">◀</button>
+
+      <img id="otherImage" src="images/20240403_154351.webp" alt="sculpture"> <!-- current artwork image -->
+
+      <button class="arrow" id="rightArrow" type="button" aria-label="Next artwork">▶</button>
+
+      <div class="details"> <!-- dynamically updated artwork title and description -->
+        <h3 id="otherTitle">Piece Name: Unnaturally Literal</h3>
+        <p id="otherDesc">This piece is a play on the idiom, “Spill your guts out”, which means, “tell your secrets”. It’s a visual representation that shows the harm of telling others your sensitive secrets, both metaphorically and physically.</p>
+      </div>
     </div>
 
-    <!-- Right: title + text -->
-    <div class="text">
-      <h2>Featured Piece: Protective Elements</h2>
-      <p>Sorry, I couldn’t get accurate info on this in time for submission. Lorem ipsum dolor sit amet, 
-      consectetur adipiscing elit. In eget ligula dolor. Vestibulum elit neque, porta sed metus at, gravida 
-      aliquam nibh. In neque augue, consequat sit amet dictum a, faucibus quis magna. Maecenas eget enim 
-      vestibulum, porttitor sapien id, dapibus nunc. Proin facilisis a felis a mollis. Praesent egestas lorem 
-      quis dapibus pellentesque. Real information for this will be added shortly!</p>
-    </div>
-  </div>
-</section>
-
-  <!-- Other Collection Items -->
-    <section class="other">
-        <h2>Other Collection Items</h2>
-        <div class="other-content">
-            <span class="arrow">◀</span>
-            <img src="images/20240403_154351.webp" alt="sculpture">
-            <span class="arrow">▶</span>
-            <div>
-                <h3>Piece Name: Unnaturally Literal</h3>
-                <p>Play on the idiom “spill your guts out” which means “tell your secrets”. 
-                Visual representation shows how harmful telling people your secrets can be.</p>
-                <p>This piece is a play on the idiom, “Spill your guts out”, which means, “tell your secrets”. 
-                It’s a visual representation that shows the harm of telling others your sensitive secrets, 
-                both metaphorically and physically.</p>
-            </div>
+    <!-- aria-live region announces changes for screen readers -->
+    <div id="galleryStatus" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  </section>
+</main>
+  <footer> <!-- site footer with logo, social links, and navigation -->
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="images/Logo.png" alt="Collectors Corner Logo">
+        <div class="socials">
+          <a href="https://facebook.com" class="icon fb"></a>
+          <a href="https://linkedin.com" class="icon li"></a>
+          <a href="https://youtube.com" class="icon yt"></a>
+          <a href="https://instagram.com" class="icon ig"></a>
         </div>
-    </section>
-    
-  <footer>
-  <div class="footer-container">
-    <!-- Left: logo + socials -->
-    <div class="footer-left">
-      <img src="images/Logo.png" alt="Collectors Corner Logo">
-      <div class="socials">
-        <a href="https://facebook.com" class="icon fb" aria-label="Facebook"></a>
-        <a href="https://linkedin.com" class="icon li" aria-label="LinkedIn"></a>
-        <a href="https://youtube.com" class="icon yt" aria-label="YouTube"></a>
-        <a href="https://instagram.com" class="icon ig" aria-label="Instagram"></a>
+      </div>
+      <div class="footer-right">
+        <div>
+          <h4>Partners</h4>
+          <p>Mac</p><p>Ty</p><p>Calix</p>
+        </div>
+        <div>
+          <h4>About</h4>
+          <p>Projects</p><p>Jobs</p>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <p>Contact</p><p>Page</p>
+        </div>
       </div>
     </div>
+    <p class="copyright">© Collectors corner</p>
+  </footer>
 
-    <!-- Right: footer links -->
-    <div class="footer-right">
-      <div>
-        <h4>Partners</h4>
-        <p>Mac</p>
-        <p>Ty</p>
-        <p>Calix</p>
-      </div>
-      <div>
-        <h4>About</h4>
-        <p>Projects</p>
-        <p>Jobs</p>
-      </div>
-      <div>
-        <h4>Support</h4>
-        <p>Contact</p>
-        <p>Page</p>
-      </div>
-    </div>
-  </div>
+<script>
+const artworks = [ // array of all artworks in the gallery
+  { img: "images/20240403_154351.webp", title: "Unnaturally Literal", desc: "Unnaturally Literal is a piece that plays on the idiom spill your guts out. The piece displays the literal meaning of the term, but also shows the hidden meaning when you tell secrets. Since sharing person secrets can come back to harm you." },
+  { img: "images/20250403_085056.webp", title: "Apocalypse in Waiting", desc: "Apocalypse in Waiting is a work in progress piece. I originally wanted to have all four horseman of the apocalypse, but only had one done. The piece displays the horse that belongs to rider of conquest from the Bible. It has elements you see described in the text and the excerpt from Revelations is inscribed on the platform the horse is standing on. The horse has no rider yet because it is waiting for the apocalypse to happen." },
+  { img: "images/20241108_090701.webp", title: "Displaced Elegance", desc: "Displaced Elegance is a box that was made with contrast and the basic principles of art in mind. I took a simple design and made a story with the main part of the box having elegant colors and shapes. While the pieces that stick out look displaced and contrast with the main body. This overall makes it look like the box has been tampered with or changed." },
+  { img: "images/20240411_080707-1.webp", title: "Gerald", desc: "Gerald is a face jug that can hold and store liquids. The disturbing facial expression is emphasized by the disproportionate features and how unrealistic they are." },
+  { img: "images/20230526_135524-1.webp", title: "Grimm Past", desc: "Grimm Past displays a style that you see in traditional German art. The colors as well as flowers and the little boy and girl is what you typically see. Additionally the center piece is a reference to the fairy tale the Juniper Tree by the Grimm Brothers. The Grimm Brothers have from Germany and took traditional worldwide stories and transcribed them for everyone to hear." },
+  { img: "images/Screenshot_20250907_210656_Photos.webp", title: "Assault", desc: "Assault was created with discomfort in mind. It represents the people that have been victims of sexual assault. The women's body is being grabbed in places that are uncomfortable and the torso is in a pose that shows that she is trying to escape or distressed. Many people say its inappropriate and makes them uncomfortable, which is exactly what I had in mind since thats what the victims have to experience and go through." },
+];
 
-  <p class="copyright">© Collectors corner</p>
-</footer>
+const imgElement = document.getElementById("otherImage"); // image element to update
+const titleElement = document.getElementById("otherTitle"); // title text element
+const descElement = document.getElementById("otherDesc"); // description text element
+const leftArrow = document.getElementById("leftArrow"); // left navigation button
+const rightArrow = document.getElementById("rightArrow"); // right navigation button
+const otherContent = document.getElementById("otherContent"); // gallery container
+const galleryStatus = document.getElementById("galleryStatus"); // aria-live announcer
+
+let currentIndex = 0; // tracks current artwork index
+let isAnimating = false; // prevents input during fade animation
+
+function announceGallery(index) { // updates aria-live text for screen readers
+  const art = artworks[index];
+  galleryStatus.textContent = `${art.title}: ${art.desc.slice(0, 80)}${art.desc.length > 80 ? '…' : ''}`;
+}
+
+function updateArtwork(index) { // updates displayed artwork when changed
+  if (isAnimating) return;
+  isAnimating = true;
+  otherContent.classList.add("fade"); // trigger fade-out animation
+  setTimeout(() => {
+    const art = artworks[index];
+    imgElement.src = art.img; // change image source
+    imgElement.alt = art.title; // update image alt text
+    titleElement.textContent = `Piece Name: ${art.title}`; // update artwork title
+    descElement.textContent = art.desc; // update artwork description
+    otherContent.classList.remove("fade"); // fade back in
+    announceGallery(index); // update screen reader announcement
+    setTimeout(() => isAnimating = false, 250); // unlock animation state
+  }, 200);
+}
+
+leftArrow.addEventListener("click", () => { // handles left button click
+  currentIndex = (currentIndex - 1 + artworks.length) % artworks.length; // wraps to last if at first
+  updateArtwork(currentIndex);
+});
+rightArrow.addEventListener("click", () => { // handles right button click
+  currentIndex = (currentIndex + 1) % artworks.length; // wraps to first if at last
+  updateArtwork(currentIndex);
+});
+
+document.addEventListener('keydown', e => { // enables keyboard navigation
+  const active = document.activeElement;
+  const isTyping = active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable);
+  if (isTyping) return; // prevents interference while typing
+  if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    leftArrow.click(); // triggers previous artwork
+  }
+  if (e.key === 'ArrowRight') {
+    e.preventDefault();
+    rightArrow.click(); // triggers next artwork
+  }
+});
+
+// initialize aria-live region when page loads
+announceGallery(currentIndex);
+</script>
 </body>
 </html>
-
-
-<!-- TODO: MAKE SURE TO USE 3 DIFFERENT TYPES OF CSS FOR FINAL VERSION -->
